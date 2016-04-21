@@ -1,6 +1,6 @@
 ## Statistics
 
-The results of these queries were computed over the whole dataset, loaded on Virtuoso 07.20.3215.
+The results of these queries were computed over the whole [dataset](https://datahub.io/dataset/human-activities-and-instructions), loaded on Virtuoso 07.20.3215.
 
  Query Number | Statistic | Value 
 ----|----|-----
@@ -8,15 +8,18 @@ The results of these queries were computed over the whole dataset, loaded on Vir
 2 | Number labelled nodes | 2,610,223 |
 3 | Number of main processes | 215,959 |
 
-## Queries
+## Query Prefixes
 
-Standard prefix for all the queries:
+Standard prefixes for all the queries:
 ```
 PREFIX prohow: <http://w3id.org/prohow#> 
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 PREFIX oa: <http://www.w3.org/ns/oa#> 
 ```
+
+## Queries
+
 Query 1) Count the number of triples:
 ```
 SELECT (COUNT(*) AS ?no) WHERE { ?s ?p ?o  }
@@ -81,7 +84,7 @@ SELECT ?type (COUNT (DISTINCT ?output) as ?no) WHERE {
   ?output rdf:type ?type
 } GROUP BY ?type ?no ORDER BY desc(?no) LIMIT 100
  ```
- Quer 11) Find the type of requirements most correlated with a particular requirement (in this example, what is usually used in conjunction with *Paper*?):
+ Query 11) Find the type of requirements most correlated with a particular requirement (in this example, what is usually used in conjunction with *Paper*?):
   ```
 SELECT ?type (COUNT (DISTINCT ?other_req) as ?no)
 WHERE { 
