@@ -40,28 +40,36 @@ SELECT ?main ?label WHERE {
   FILTER regex(str(?label), "create an email account", "i" )
 } LIMIT 100
 ```
-Query 5) Select the various methods of a process (query result is empty if the process does not have sub-methods):
+Query 5) Get the title and types (categories) of a set of instructions:
+```
+SELECT ?label ?type WHERE { 
+  <http://vocab.inf.ed.ac.uk/procont#?url=http://www.wikihow.com/make-pizza-dough&t=1396510456016&n=11094&k=mainentity> rdfs:label ?label . 
+  <http://vocab.inf.ed.ac.uk/procont#?url=http://www.wikihow.com/make-pizza-dough&t=1396510456016&n=11094&k=mainentity> rdf:type / rdfs:subClassOf* ?type
+} LIMIT 100
+```
+
+Query 6) Select the various methods of a process (query result is empty if the process does not have sub-methods):
  ```
 SELECT ?method ?label WHERE { 
   <http://vocab.inf.ed.ac.uk/procont#?url=http://www.wikihow.com/create-an-email-account&t=1396532526446&n=1068622&k=mainentity> prohow:has_method ?method . 
   ?method rdfs:label ?label 
 } LIMIT 100
 ```
-Query 6) Select the various steps of a process (query result is empty if the process does not have sub-steps):
+Query 7) Select the various steps of a process (query result is empty if the process does not have sub-steps):
 ```
 SELECT ?step ?label WHERE { 
   <http://vocab.inf.ed.ac.uk/procont#?url=http://www.wikihow.com/create-an-email-account&t=1396532526447&n=1068628> prohow:has_step ?step . 
   ?step rdfs:label ?label 
 } LIMIT 100
  ```
- Query 7) Select the various requirements of a process (query result is empty if the process does not have requirements):
+ Query 8) Select the various requirements of a process (query result is empty if the process does not have requirements):
   ```
 SELECT ?requirement ?label WHERE { 
   <http://vocab.inf.ed.ac.uk/procont#?url=http://www.wikihow.com/make-pizza-dough&t=1396510456016&n=11094&k=mainentity> prohow:requires ?requirement . 
   ?requirement rdfs:label ?label 
 } LIMIT 100
  ```
- Query 8) Like Query 7), but optionally return the DBpedia resource linked to each requirement (when available):
+ Query 9) Like Query 8), but optionally return the DBpedia resource linked to each requirement (when available):
   ```
 SELECT ?requirement ?label ?type WHERE { 
   <http://vocab.inf.ed.ac.uk/procont#?url=http://www.wikihow.com/make-pizza-dough&t=1396510456016&n=11094&k=mainentity> prohow:requires ?requirement . 
@@ -69,14 +77,14 @@ SELECT ?requirement ?label ?type WHERE {
   OPTIONAL {?requirement rdf:type ?type} 
 } LIMIT 100
  ```
- Query 9) Find the 100 most common requirements
+ Query 10) Find the 100 most common requirements
   ```
 SELECT ?type (COUNT (DISTINCT ?main) as ?no) WHERE { 
   ?main prohow:requires ?requirement .
   ?requirement rdf:type ?type
 } GROUP BY ?type ?no ORDER BY desc(?no) LIMIT 100
  ```
-  Query 10) Find the 100 most common outputs
+  Query 11) Find the 100 most common outputs
   ```
 SELECT ?type (COUNT (DISTINCT ?output) as ?no) WHERE { 
   ?main rdf:type prohow:instruction_set .
@@ -84,7 +92,7 @@ SELECT ?type (COUNT (DISTINCT ?output) as ?no) WHERE {
   ?output rdf:type ?type
 } GROUP BY ?type ?no ORDER BY desc(?no) LIMIT 100
  ```
- Query 11) Find the type of requirements most correlated with a particular requirement (in this example, the query can be interpreted as: "*what is usually used in conjunction with Paper*"?):
+ Query 12) Find the type of requirements most correlated with a particular requirement (in this example, the query can be interpreted as: "*what is usually used in conjunction with Paper*"?):
   ```
 SELECT ?type (COUNT (DISTINCT ?other_req) as ?no)
 WHERE { 
