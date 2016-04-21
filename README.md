@@ -39,6 +39,18 @@ The [following figure](http://paolopareti.uk/prohow/PROHOW_DataModel_Example.pdf
 
 Sample SPARQL queries are available [here](https://github.com/paolo7/KnowHowDataset/blob/master/SPARQL.md).
 
+## Sample SPARQL Endpoint
+
+A sample SPARQL endpoint is available at [Dydra](http://dydra.com/paolo-pareti/knowhow6/@query). **NOTE:** this endpoint exposes **only** a subset of the dataset, more specifically files: 
+
+* *8of11_knowhow_wikihow*
+* *9of11_knowhow_wikihow*
+* *instruction set entities*
+* *Process - Inputs*
+* *Process - Outputs*
+* *Process - Step Links*
+* *wikiHow categories hierarchy*
+
 ## Statistics
 
 * **23,033,490**: number of triples.
