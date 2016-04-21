@@ -84,7 +84,7 @@ SELECT ?type (COUNT (DISTINCT ?output) as ?no) WHERE {
   ?output rdf:type ?type
 } GROUP BY ?type ?no ORDER BY desc(?no) LIMIT 100
  ```
- Query 11) Find the type of requirements most correlated with a particular requirement (in this example, what is usually used in conjunction with *Paper*?):
+ Query 11) Find the type of requirements most correlated with a particular requirement (in this example, the query can be interpreted as: "*what is usually used in conjunction with Paper*"?):
   ```
 SELECT ?type (COUNT (DISTINCT ?other_req) as ?no)
 WHERE { 
