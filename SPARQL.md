@@ -19,35 +19,76 @@ PREFIX oa: <http://www.w3.org/ns/oa#>
 ```
 Query 1) Count the number of triples:
 ```
-SELECT (COUNT(*) AS ?no) where { ?s ?p ?o  }
+SELECT (COUNT(*) AS ?no) WHERE { ?s ?p ?o  }
 ```
 Query 2) Count the number of entities with an associated label:
 ```
-SELECT (COUNT(distinct ?s) AS ?no) where { ?s rdfs:label ?o  }
+SELECT (COUNT(distinct ?s) AS ?no) WHERE { ?s rdfs:label ?o  }
 ```
 Query 3) Count of number of distinct sets of instructions
 ```
-SELECT (COUNT(distinct ?main) AS ?no) where { ?main rdf:type prohow:instruction_set }
+SELECT (COUNT(distinct ?main) AS ?no) WHERE { ?main rdf:type prohow:instruction_set }
  ```
  Query 4) Search main sets of instructions that contain substring "create an email account" in the label:
  ```
-SELECT ?main ?label where { 
+SELECT ?main ?label WHERE { 
   ?main rdf:type prohow:instruction_set .
   ?main rdfs:label ?label 
   FILTER regex(str(?label), "create an email account", "i" )
 } LIMIT 100
 ```
-Query 5) Select the various methods of a set of instructions (query result is empty if the set of instructions does not have sub-methods)
+Query 5) Select the various methods of a process (query result is empty if the process does not have sub-methods):
  ```
-SELECT ?method ?label where { 
+SELECT ?method ?label WHERE { 
   <http://vocab.inf.ed.ac.uk/procont#?url=http://www.wikihow.com/create-an-email-account&t=1396532526446&n=1068622&k=mainentity> prohow:has_method ?method . 
   ?method rdfs:label ?label 
 } LIMIT 100
 ```
-Query 6) Select the various steps of a set of instructions (query result is empty if the set of instructions does not have sub-steps)
+Query 6) Select the various steps of a process (query result is empty if the process does not have sub-steps):
 ```
-SELECT ?step ?label where { 
+SELECT ?step ?label WHERE { 
   <http://vocab.inf.ed.ac.uk/procont#?url=http://www.wikihow.com/create-an-email-account&t=1396532526447&n=1068628> prohow:has_step ?step . 
   ?step rdfs:label ?label 
 } LIMIT 100
+ ```
+ Query 7) Select the various requirements of a process (query result is empty if the process does not have requirements):
+  ```
+SELECT ?requirement ?label WHERE { 
+  <http://vocab.inf.ed.ac.uk/procont#?url=http://www.wikihow.com/make-pizza-dough&t=1396510456016&n=11094&k=mainentity> prohow:requires ?requirement . 
+  ?requirement rdfs:label ?label 
+} LIMIT 100
+ ```
+ Query 8) Like Query 7), but optionally return the DBpedia resource linked to each requirement (when available):
+  ```
+SELECT ?requirement ?label ?type WHERE { 
+  <http://vocab.inf.ed.ac.uk/procont#?url=http://www.wikihow.com/make-pizza-dough&t=1396510456016&n=11094&k=mainentity> prohow:requires ?requirement . 
+  ?requirement rdfs:label ?label 
+  OPTIONAL {?requirement rdf:type ?type} 
+} LIMIT 100
+ ```
+ Query 9) Find the 100 most common requirements
+  ```
+SELECT ?type (COUNT (DISTINCT ?main) as ?no) WHERE { 
+  ?main prohow:requires ?requirement .
+  ?requirement rdf:type ?type
+} GROUP BY ?type ?no ORDER BY desc(?no) LIMIT 100
+ ```
+  Query 10) Find the 100 most common outputs
+  ```
+SELECT ?type (COUNT (DISTINCT ?output) as ?no) WHERE { 
+  ?main rdf:type prohow:instruction_set .
+  ?output prohow:has_method ?main .
+  ?output rdf:type ?type
+} GROUP BY ?type ?no ORDER BY desc(?no) LIMIT 100
+ ```
+ Quer 11) Find the type of requirements most correlated with a particular requirement (in this example, what is usually used in conjunction with *Paper*?):
+  ```
+SELECT ?type (COUNT (DISTINCT ?other_req) as ?no)
+WHERE { 
+  ?main rdf:type prohow:instruction_set .
+  ?main prohow:requires ?requirement . 
+  ?requirement rdf:type <http://dbpedia.org/resource/Paper> .
+  ?main prohow:requires ?other_req . 
+  ?other_req rdf:type ?type
+} GROUP BY ?type ORDER BY desc(?no) LIMIT 100
  ```
