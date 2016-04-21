@@ -8,6 +8,10 @@ The results of these queries were computed over the whole [dataset](https://data
 2 | Number labelled nodes | 2,610,223 |
 3 | Number of main processes | 215,959 |
 
+## Sample Endpoint
+
+You can try some of these queries at the [Dydra public endpoint](http://dydra.com/paolo-pareti/knowhow6/sparql). **NOTE**: this endpoint **does not** expose the whole dataset, and some query results might be missing or incomplete.
+
 ## Query Prefixes
 
 Standard prefixes for all the queries:
