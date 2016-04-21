@@ -1,1 +1,55 @@
-# KnowHowDataset
+## Overview
+
+* This dataset has been produced as part of the [The Web of Know-How](http://homepages.inf.ed.ac.uk/s1054760/prohow/index.htm) project
+* **To cite this dataset use:**
+Paolo Pareti, Benoit Testu, Ryutaro Ichise, Ewan Klein and Adam Barker. Integrating Know-How into the Linked Data Cloud. Knowledge Engineering and Knowledge Management, volume 8876 of Lecture Notes in Computer Science, pages 385-396. Springer International Publishing (2014) 
+([PDF](http://homepages.inf.ed.ac.uk/s1054760/papers/pareti_ekaw_2014.pdf)) ([bibtex](http://homepages.inf.ed.ac.uk/s1054760/bibtex/pareti2014b.bib))
+* **Quickstart**: if you want to experiment with the most high-quality data before downloading all the datasets, download the file *9of11_knowhow_wikihow*, and optionally files *Process - Inputs*, *Process - Outputs*, *Process - Step Links* and *wikiHow categories hierarchy*.
+* Data representation based on the [PROHOW](http://w3id.org/prohow#) vocabulary
+* Data extracted from existing web resources is linked to the original resources using the [Open Annotation](http://www.openannotation.org/spec/core/) specification
+* Data also available from [datahub](https://datahub.io/dataset/human-activities-and-instructions)
+
+## Available Datasets
+
+Instruction datasets:
+
+- Datasets *1of11_knowhow_wikihow* to *9of11_knowhow_wikihow* contain instructions from the [wikiHow](http://www.wikihow.com/) website. Instructions are allocated in the datasets in order of popularity. This means that the most popular and high-quality instructions are found in 9of11_knowhow_wikihow, while the least popular ones are in dataset 1of11_knowhow_wikihow. These instructions are also classified according to the hierarchy found in *wikiHow categories hierarchy*.
+- Datasets *10of11_knowhow_snapguide* to *11of11_knowhow_snapguide* contain instructions from the [Snapguide](https://snapguide.com/) website. Instructions coming from Snapguide are not sorted by their popularity.
+
+Links datasets:
+
+- The *Process - Inputs* datasets contain detailed information about the inputs of the sets of instructions, including links to [DBpedia](http://wiki.dbpedia.org/) resources
+- The *Process - Outputs* datasets contains detailed information about the outputs of the sets of instructions, including links to [DBpedia](http://wiki.dbpedia.org/) resources
+- The *Process - Step Links* datasets contains links between different sets of instructions
+
+Other datasets:
+
+- The *wikiHow categories hierarchy* dataset contains information on how the various wikiHow categories are hierarchically structured
+
+## Data Model
+
+The [following figure](http://paolopareti.uk/prohow/PROHOW_DataModel_Example.pdf) is a simple example of how the [PROHOW](http://w3id.org/prohow#) vocabulary is used in the datasets. Instructions in the dataset can have more complex structures, for example instructions could have multiple methods, steps could have further sub-steps, and complex requirements could be decomposed into sub-requirements.
+
+![example PROHOW data model](http://paolopareti.uk/prohow/PROHOW_DataModel_Example.jpg)
+
+## Statistics
+
+* **211,696**: number of instructions.
+From wikiHow: 167,232 (datasets *1of11_knowhow_wikihow* to *9of11_knowhow_wikihow*).
+From Snapguide: 44,464 (datasets *10of11_knowhow_snapguide* to *11of11_knowhow_snapguide*).
+* **2,609,236**: number of RDF nodes within the instructions
+From wikiHow: 1,871,468 (datasets *1of11_knowhow_wikihow* to *9of11_knowhow_wikihow*).
+From Snapguide: 737,768 (datasets *10of11_knowhow_snapguide* to *11of11_knowhow_snapguide*).
+* **255,101**: number of process inputs linked to 8,453 distinct DBpedia concepts (dataset *Process - Inputs*)
+* **4,467**: number of process outputs linked to 3,439 distinct DBpedia concepts (dataset *Process - Outputs*)
+* **376,795**: number of step links between 114,166 different sets of instructions (dataset *Process - Step Links*)
+
+------
+
+###### This dataset is partially based on original instructions from [wikiHow](http://www.wikihow.com/) and [Snapguide](https://snapguide.com/) accessed on the 16th of July 2014. It is licensed under the Creative Commons Attribution-NonCommercial 4.0 International [(CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/) licence.
+
+------
+
+###### For any queries and requests contact: [Paolo Pareti](https://w3id.org/people/paolo)
+
+------
