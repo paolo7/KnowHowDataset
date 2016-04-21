@@ -1,3 +1,5 @@
+# The Web of Know-How: Human Activities and Instructions
+
 ## Overview
 
 * This dataset has been produced as part of the [The Web of Know-How](http://homepages.inf.ed.ac.uk/s1054760/prohow/index.htm) project
