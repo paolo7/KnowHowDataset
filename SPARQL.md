@@ -1,6 +1,6 @@
 ## Statistics
 
-The results of these queries were computed over the whole [dataset](https://datahub.io/dataset/human-activities-and-instructions) (loaded on Virtuoso 07.20.3215).
+The results of these queries were computed over the whole [dataset](https://w3id.org/knowhow/dataset) (loaded on Virtuoso 07.20.3215).
 
  Query Number | Statistic | Value 
 ----|----|-----
