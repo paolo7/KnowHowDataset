@@ -10,7 +10,7 @@ The results of these queries were computed over the whole [dataset](https://data
 
 ## Sample Endpoint
 
-You can try some of these queries at the [Dydra public endpoint](http://dydra.com/paolo-pareti/knowhow6/sparql). 
+You can try some of these queries at the [Dydra public endpoint](https://w3id.org/knowhow/sparql). 
 
 **NOTE**: this endpoint **does not** expose the whole dataset! Some query results might be missing or incomplete.
 
