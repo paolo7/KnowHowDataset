@@ -9,7 +9,7 @@ Paolo Pareti, Benoit Testu, Ryutaro Ichise, Ewan Klein and Adam Barker. Integrat
 * **Quickstart**: if you want to experiment with the most high-quality data before downloading all the datasets, download the file *9of11_knowhow_wikihow*, and optionally files *instruction set entities*, *Process - Inputs*, *Process - Outputs*, *Process - Step Links* and *wikiHow categories hierarchy*.
 * Data representation based on the [PROHOW](http://w3id.org/prohow#) vocabulary
 * Data extracted from existing web resources is linked to the original resources using the [Open Annotation](http://www.openannotation.org/spec/core/) specification
-* Data also available from [datahub](https://datahub.io/dataset/human-activities-and-instructions)
+* Data also available from [datahub](https://w3id.org/knowhow/dataset)
 
 ## Available Datasets
 
@@ -37,11 +37,11 @@ The [following figure](http://paolopareti.uk/prohow/PROHOW_DataModel_Example.pdf
 
 ## SPARQL queries
 
-Sample SPARQL queries are available [here](https://github.com/paolo7/KnowHowDataset/blob/master/SPARQL.md).
+Sample SPARQL queries are available [here](https://w3id.org/knowhow/queries).
 
 ## Sample SPARQL Endpoint
 
-A sample SPARQL endpoint is available at [Dydra](http://dydra.com/paolo-pareti/knowhow6/sparql). **NOTE:** this endpoint exposes **only** a subset of the dataset, more specifically files: 
+A sample SPARQL endpoint is available at [Dydra](https://w3id.org/knowhow/sparql). **NOTE:** this endpoint exposes **only** a subset of the dataset, more specifically files: 
 
 * *8of11_knowhow_wikihow*
 * *9of11_knowhow_wikihow*
