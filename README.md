@@ -41,7 +41,7 @@ Sample SPARQL queries are available [here](https://w3id.org/knowhow/queries).
 
 ## Sample SPARQL Endpoint
 
-A sample SPARQL endpoint is available at [Dydra](https://w3id.org/knowhow/sparql). You can use [this URI](http://dydra.com/paolo-pareti/knowhow6/sparql) for federated queries. **NOTE:** this endpoint exposes **only** a subset of the dataset, more specifically files: 
+A sample SPARQL endpoint is available at [Dydra](https://w3id.org/knowhow/sparql). You can use [this URI](http://dydra.com/paolo-pareti/knowhow6/sparql) for federated queries. To get you started, [here](https://w3id.org/knowhow/queries) are some sample queries. **NOTE:** this endpoint exposes **only** a subset of the dataset, more specifically files: 
 
 * *8of11_knowhow_wikihow*
 * *9of11_knowhow_wikihow*
