@@ -98,7 +98,7 @@ SELECT ?type (COUNT (DISTINCT ?output) as ?no) WHERE {
   ?output rdf:type ?type
 } GROUP BY ?type ?no ORDER BY desc(?no) LIMIT 100
  ```
- Query 12) Find the type of requirements most correlated with a particular requirement (in this example, the query can be interpreted as: "*what is usually used in conjunction with Paper*"?). [Try it!](https://w3id.org/knowhow/sparql?query=PREFIX%20prohow%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fprohow%23%3E%20%0APREFIX%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%20%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%20%0APREFIX%20oa%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Foa%23%3E%20%0A%0ASELECT%20%3Ftype%20(COUNT%20(DISTINCT%20%3Fother_req)%20as%20%3Fno)%0AWHERE%20%7B%20%0A%20%20%3Fmain%20rdf%3Atype%20prohow%3Ainstruction_set%20.%0A%20%20%3Fmain%20prohow%3Arequires%20%3Frequirement%20.%20%0A%20%20%3Frequirement%20rdf%3Atype%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FPaper%3E%20.%0A%20%20%3Fmain%20prohow%3Arequires%20%3Fother_req%20.%20%0A%20%20%3Fother_req%20rdf%3Atype%20%3Ftype%0A%20%20FILTER%20(%3Ftype%20!%3D%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FPaper%3E)%0A%7D%20GROUP%20BY%20%3Ftype%20ORDER%20BY%20desc(%3Fno)%20LIMIT%20100)
+ Query 12) Find the type of requirements most correlated with a particular requirement (in this example, the query can be interpreted as: "*what is usually used in conjunction with Paper*"?). [Try it!](https://w3id.org/knowhow/sparql?query=PREFIX%20prohow%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fprohow%23%3E%20%0APREFIX%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%20%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%20%0APREFIX%20oa%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Foa%23%3E%20%0A%0ASELECT%20%3Ftype%20(COUNT%20(DISTINCT%20%3Fother_req)%20as%20%3Fno)%0AWHERE%20%7B%20%0A%20%20%3Fmain%20rdf%3Atype%20prohow%3Ainstruction_set%20.%0A%20%20%3Fmain%20prohow%3Arequires%20%3Frequirement%20.%20%0A%20%20%3Frequirement%20rdf%3Atype%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FPaper%3E%20.%0A%20%20%3Fmain%20prohow%3Arequires%20%3Fother_req%20.%20%0A%20%20%3Fother_req%20rdf%3Atype%20%3Ftype%0A%20%20FILTER%20(%3Ftype%20!%3D%20%3Chttp%3A%2F%2Fdbpedia.org%2Fresource%2FPaper%3E)%0A%7D%20GROUP%20BY%20%3Ftype%20ORDER%20BY%20desc(%3Fno)%20LIMIT%2020)
   ```
 SELECT ?type (COUNT (DISTINCT ?other_req) as ?no)
 WHERE { 
@@ -108,5 +108,5 @@ WHERE {
   ?main prohow:requires ?other_req . 
   ?other_req rdf:type ?type
   FILTER (?type != <http://dbpedia.org/resource/Paper>)
-} GROUP BY ?type ORDER BY desc(?no) LIMIT 100
+} GROUP BY ?type ORDER BY desc(?no) LIMIT 20
  ```
