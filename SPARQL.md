@@ -118,7 +118,7 @@ WHERE {
   ?main rdf:type prohow:instruction_set .
   ?annotation oa:hasTarget ?target . 
   ?target oa:hasSource ?source .
- 	?target oa:hasSelector ?selector .
-	 ?selector oa:exact ?exact .
-	} LIMIT 20
+  ?target oa:hasSelector ?selector .
+  ?selector oa:exact ?exact .
+} LIMIT 20
   ```
