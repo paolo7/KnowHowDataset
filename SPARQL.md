@@ -110,3 +110,15 @@ WHERE {
   FILTER (?type != <http://dbpedia.org/resource/Paper>)
 } GROUP BY ?type ORDER BY desc(?no) LIMIT 20
  ```
+ Query 13) The Linked Data representation of instructions is linked to the web documents it was extracted from using the [Open Annotation](http://www.openannotation.org/spec/core/) data model. This query finds the original source webpages of 20 instruction entities, along with the exact text span they relate to: [Try it!](https://w3id.org/knowhow/sparql?query=PREFIX%20prohow%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fprohow%23%3E%20%0APREFIX%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%20%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%20%0APREFIX%20oa%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Foa%23%3E%20%0A%0ASELECT%20DISTINCT%20%3Fexact%20%3Fsource%20%3Fmain%0AWHERE%20%7B%20%0A%20%20%3Fannotation%20oa%3AhasBody%20%3Fmain%20.%20%0A%20%20%3Fmain%20rdf%3Atype%20prohow%3Ainstruction_set%20.%0A%20%20%3Fannotation%20oa%3AhasTarget%20%3Ftarget%20.%20%0A%20%20%3Ftarget%20oa%3AhasSource%20%3Fsource%20.%0A%09%3Ftarget%20oa%3AhasSelector%20%3Fselector%20.%0A%09%3Fselector%20oa%3Aexact%20%3Fexact%20.%0A%09%7D%20LIMIT%2020)
+  ```
+SELECT DISTINCT ?exact ?source ?main
+WHERE { 
+  ?annotation oa:hasBody ?main . 
+  ?main rdf:type prohow:instruction_set .
+  ?annotation oa:hasTarget ?target . 
+  ?target oa:hasSource ?source .
+ 	?target oa:hasSelector ?selector .
+	 ?selector oa:exact ?exact .
+	} LIMIT 20
+  ```
