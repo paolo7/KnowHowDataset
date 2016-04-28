@@ -15,8 +15,8 @@ Paolo Pareti, Benoit Testu, Ryutaro Ichise, Ewan Klein and Adam Barker. Integrat
 
 Instruction datasets:
 
-- Datasets *1of11_knowhow_wikihow* to *9of11_knowhow_wikihow* contain instructions from the [wikiHow](http://www.wikihow.com/) website. Instructions are allocated in the datasets in order of popularity. This means that the most popular and high-quality instructions are found in 9of11_knowhow_wikihow, while the least popular ones are in dataset 1of11_knowhow_wikihow. These instructions are also classified according to the hierarchy found in *wikiHow categories hierarchy*.
-- Datasets *10of11_knowhow_snapguide* to *11of11_knowhow_snapguide* contain instructions from the [Snapguide](https://snapguide.com/) website. Instructions coming from Snapguide are not sorted by their popularity.
+- Datasets *1of11_knowhow_wikihow* to *9of11_knowhow_wikihow* contain instructions from the [wikiHow](http://www.wikihow.com/) website. Instructions are allocated in the datasets in order of popularity. This means that the most popular and high-quality instructions are found in 9of11_knowhow_wikihow, while the least popular ones are in dataset 1of11_knowhow_wikihow. These instructions are also classified according to the hierarchy found in *wikiHow categories hierarchy*. wikiHow instructions are community generated. As a result of this, each task is described by at most one set of instructions, which is usually of high quality thanks to the collective community contributions.
+- Datasets *10of11_knowhow_snapguide* to *11of11_knowhow_snapguide* contain instructions from the [Snapguide](https://snapguide.com/) website. These instructions are not sorted by their popularity, but they are classified in one of the Snapguide categories. Snapguide instructions are created by single users. As a result of this there might be multiple sets of instructions to achieve the same task; however these instructions on average contain more noise as they are not peer-reviewed.
 
 Links datasets:
 
@@ -26,7 +26,7 @@ Links datasets:
 
 Other datasets:
 
-- The *wikiHow categories hierarchy* dataset contains information on how the various wikiHow categories are hierarchically structured
+- The *wikiHow categories hierarchy* dataset contains information on how the various wikiHow categories are hierarchically structured, and how they relate to the Snapguide categories.
 - The *instruction set entities* dataset lists all the top-level entities in a sets of instructions. In other words, all the entities which correspond to the title of a set of instructions.
 
 ## Data Model
