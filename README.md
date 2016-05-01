@@ -63,7 +63,7 @@ A sample SPARQL endpoint is available at [Dydra](https://w3id.org/knowhow/sparql
 
 ------
 
-###### This dataset is partially based on original instructions from [wikiHow](http://www.wikihow.com/) and [Snapguide](https://snapguide.com/) accessed on the 16th of July 2014. It is licensed under the Creative Commons Attribution-NonCommercial 4.0 International [(CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/) licence.
+###### This dataset is partially based on original instructions from [wikiHow](http://www.wikihow.com/) and [Snapguide](https://snapguide.com/) accessed on the 16th of July 2014. It is licensed under the Creative Commons Attribution-NonCommercial 4.0 International [(CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/) licence. DOI: http://dx.doi.org/10.7488/ds/1394
 
 ------
 
