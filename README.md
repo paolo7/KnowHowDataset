@@ -28,6 +28,7 @@ Other datasets:
 
 - The *wikiHow categories hierarchy* dataset contains information on how the various wikiHow categories are hierarchically structured, and how they relate to the Snapguide categories.
 - The *instruction set entities* dataset lists all the top-level entities in a sets of instructions. In other words, all the entities which correspond to the title of a set of instructions.
+- The *wikiHow community links* dataset lists the links manually created by the wikiHow community of users that interlink entities belonging to different sets of instructions.
 
 ## Data Model
 
