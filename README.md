@@ -61,7 +61,7 @@ A sample SPARQL endpoint is available at [Dydra](https://w3id.org/knowhow/sparql
 77% from wikiHow (datasets *1of11_knowhow_wikihow* to *9of11_knowhow_wikihow*) and 23% from Snapguide (datasets *10of11_knowhow_snapguide* to *11of11_knowhow_snapguide*).
 * **255,101**: number of process inputs linked to 8,453 distinct DBpedia concepts (dataset *Process - Inputs*)
 * **4,467**: number of process outputs linked to 3,439 distinct DBpedia concepts (dataset *Process - Outputs*)
-* **376,795**: number of step links between 114,166 different sets of instructions (dataset *Process - Step Links*)
+* **193,701**: number of step links between 114,166 different sets of instructions (dataset *Process - Step Links*)
 
 ------
 
