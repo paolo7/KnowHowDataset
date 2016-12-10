@@ -38,7 +38,7 @@ Query 3) Count of number of distinct sets of instructions. [Try it!](https://w3i
 ```
 SELECT (COUNT(distinct ?main) AS ?no) WHERE { ?main rdf:type prohow:instruction_set }
  ```
- Query 4) Search main sets of instructions that contain substring "create an email account" in the label. [Try it!](https://w3id.org/knowhow/sparql?query=PREFIX+prohow%3A+%3Chttp%3A%2F%2Fw3id.org%2Fprohow%23%3E+%0D%0APREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+%0D%0APREFIX+oa%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Foa%23%3E+%0D%0A%0D%0ASELECT+%3Fmain+%3Flabel+WHERE+%7B+%0D%0A++%3Fmain+rdf%3Atype+prohow%3Ainstruction_set+.%0D%0A++%3Fmain+rdfs%3Alabel+%3Flabel+%0D%0A++FILTER+regex%28str%28%3Flabel%29%2C+%22email+account%22%2C+%22i%22+%29%0D%0A%7D+LIMIT+100)
+ Query 4) Search main sets of instructions that contain substring "email account" in the label. [Try it!](https://w3id.org/knowhow/sparql?query=PREFIX+prohow%3A+%3Chttp%3A%2F%2Fw3id.org%2Fprohow%23%3E+%0D%0APREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+%0D%0APREFIX+oa%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Foa%23%3E+%0D%0A%0D%0ASELECT+%3Fmain+%3Flabel+WHERE+%7B+%0D%0A++%3Fmain+rdf%3Atype+prohow%3Ainstruction_set+.%0D%0A++%3Fmain+rdfs%3Alabel+%3Flabel+%0D%0A++FILTER+regex%28str%28%3Flabel%29%2C+%22email+account%22%2C+%22i%22+%29%0D%0A%7D+LIMIT+100)
  ```
 SELECT ?main ?label WHERE { 
   ?main rdf:type prohow:instruction_set .
