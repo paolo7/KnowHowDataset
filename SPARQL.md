@@ -43,7 +43,7 @@ SELECT (COUNT(distinct ?main) AS ?no) WHERE { ?main rdf:type prohow:instruction_
 SELECT ?main ?label WHERE { 
   ?main rdf:type prohow:instruction_set .
   ?main rdfs:label ?label 
-  FILTER regex(str(?label), "create an email account", "i" )
+  FILTER regex(str(?label), "email account", "i" )
 } LIMIT 100
 ```
 Query 5) Get the title and types (categories) of a set of instructions. [Try it!](https://w3id.org/knowhow/sparql?query=PREFIX+prohow%3A+%3Chttp%3A%2F%2Fw3id.org%2Fprohow%23%3E+%0D%0APREFIX+rdf%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E+%0D%0APREFIX+rdfs%3A+%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E+%0D%0APREFIX+oa%3A+%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Foa%23%3E+%0D%0A%0D%0ASELECT+%3Flabel+%3Ftype+WHERE+%7B+%0D%0A++%3Chttp%3A%2F%2Fvocab.inf.ed.ac.uk%2Fprocont%23%3Furl%3Dhttp%3A%2F%2Fwww.wikihow.com%2Fmake-pizza-dough%26t%3D1396510456016%26n%3D11094%26k%3Dmainentity%3E+rdfs%3Alabel+%3Flabel+.+%0D%0A++%3Chttp%3A%2F%2Fvocab.inf.ed.ac.uk%2Fprocont%23%3Furl%3Dhttp%3A%2F%2Fwww.wikihow.com%2Fmake-pizza-dough%26t%3D1396510456016%26n%3D11094%26k%3Dmainentity%3E+rdf%3Atype+%2F+rdfs%3AsubClassOf%2A+%3Ftype%0D%0A%7D+LIMIT+100)
