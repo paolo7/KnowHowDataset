@@ -10,7 +10,7 @@ Paolo Pareti, Benoit Testu, Ryutaro Ichise, Ewan Klein and Adam Barker. Integrat
 * Data representation based on the [PROHOW](http://w3id.org/prohow#) vocabulary
 * Data extracted from existing web resources is linked to the original resources using the [Open Annotation](http://www.openannotation.org/spec/core/) specification
 * Data concerning the manual evaluation of this dataset is available [here](https://github.com/paolo7/KnowHowDatasetLinksEvaluation)
-* Data also available from [datahub](https://w3id.org/knowhow/dataset)
+* Data also available from [datahub](https://w3id.org/knowhow/dataset) and [kaggle](https://www.kaggle.com/paolop/human-instructions)
 
 ## Available Datasets
 
