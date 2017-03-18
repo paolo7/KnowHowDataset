@@ -53,6 +53,10 @@ A sample SPARQL endpoint is available at [Dydra](https://w3id.org/knowhow/sparql
 * *Process - Step Links*
 * *wikiHow categories hierarchy*
 
+## Multilingual Version of the Data
+
+A multilingual version of this data can be found on [Kaggle](https://www.kaggle.com/paolop/human-instructions-multilingual-wikihow). This multilingual dataset contains over 800K instructions in 16 different languages.
+
 ## Statistics
 
 * **23,033,490**: number of triples.
