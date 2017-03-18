@@ -22,6 +22,7 @@ PREFIX prohow: <http://w3id.org/prohow#>
 PREFIX rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> 
 PREFIX rdfs: <http://www.w3.org/2000/01/rdf-schema#> 
 PREFIX oa: <http://www.w3.org/ns/oa#> 
+PREFIX owl: <http://www.w3.org/2002/07/owl#> 
 ```
 
 ## Queries
@@ -121,4 +122,20 @@ WHERE {
   ?target oa:hasSelector ?selector .
   ?selector oa:exact ?exact .
 } LIMIT 20
+  ```
+  
+Query 14) The multilingual version of the dataset contains different versions in different languages of the same set of instructions. If you are using this data, you can use this query to find out pairs of instructions in different languages, along with their label, which refer to the same set of instructions: [Try it!](http://dydra.com/paolo-pareti/wikihow_multilingual/query?query=PREFIX%20prohow%3A%20%3Chttp%3A%2F%2Fw3id.org%2Fprohow%23%3E%20%0APREFIX%20rdf%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F1999%2F02%2F22-rdf-syntax-ns%23%3E%20%0APREFIX%20rdfs%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2000%2F01%2Frdf-schema%23%3E%20%0APREFIX%20owl%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2F2002%2F07%2Fowl%23%3E%20%0APREFIX%20oa%3A%20%3Chttp%3A%2F%2Fwww.w3.org%2Fns%2Foa%23%3E%20%0A%0ASELECT%20DISTINCT%20%3Fa%20%3Fb%20%3Fa_label%20%3Fb_label%0AWHERE%20%7B%0A%3Fa%20rdf%3Atype%20prohow%3Ainstruction_set%20.%0A%3Fb%20rdf%3Atype%20prohow%3Ainstruction_set%20.%0A%3Fann_a%20oa%3AhasBody%20%3Fa%20.%0A%3Fann_b%20oa%3AhasBody%20%3Fb%20.%0A%3Fann_a%20oa%3AhasTarget%20%3Ftar_a%20.%0A%3Fann_b%20oa%3AhasTarget%20%3Ftar_b%20.%0A%3Ftar_a%20owl%3AsameAs%20%3Ftar_b%20.%20%0A%3Fa%20rdfs%3Alabel%20%3Fa_label%20.%20%0A%3Fb%20rdfs%3Alabel%20%3Fb_label%20.%20%0A%7D)
+  ```
+SELECT DISTINCT ?a ?b ?a_label ?b_label
+WHERE {
+  ?a rdf:type prohow:instruction_set .
+  ?b rdf:type prohow:instruction_set .
+  ?ann_a oa:hasBody ?a .
+  ?ann_b oa:hasBody ?b .
+  ?ann_a oa:hasTarget ?tar_a .
+  ?ann_b oa:hasTarget ?tar_b .
+  ?tar_a owl:sameAs ?tar_b . 
+  ?a rdfs:label ?a_label . 
+  ?b rdfs:label ?b_label . 
+}
   ```
