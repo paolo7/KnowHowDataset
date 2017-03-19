@@ -69,7 +69,7 @@ A multilingual version of this data can be found on [Kaggle](https://www.kaggle.
 
 ------
 
-###### This dataset is partially based on original instructions from [wikiHow](http://www.wikihow.com/) and [Snapguide](https://snapguide.com/) accessed on the 16th of July 2014. It is licensed under the Creative Commons Attribution-NonCommercial 4.0 International [(CC BY-NC 4.0)](http://creativecommons.org/licenses/by-nc/4.0/) licence. DOI: http://dx.doi.org/10.7488/ds/1394
+###### This dataset is partially based on original instructions from [wikiHow](http://www.wikihow.com/) and [Snapguide](https://snapguide.com/) accessed on the 16th of July 2014. It is licensed under the Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International [(CC BY-NC-SA 4.0)](https://creativecommons.org/licenses/by-nc-sa/4.0/) licence. DOI: http://dx.doi.org/10.7488/ds/1394
 
 ------
 
