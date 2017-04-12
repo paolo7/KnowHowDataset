@@ -57,6 +57,12 @@ A sample SPARQL endpoint is available at [Dydra](https://w3id.org/knowhow/sparql
 
 A multilingual version of this data can be found on [Kaggle](https://www.kaggle.com/paolop/human-instructions-multilingual-wikihow). This multilingual dataset contains over 800K instructions in 16 different languages.
 
+## A Graphical Visualisation Tool and Live Demo
+
+The [HowLinks](https://github.com/paolo7/howlinks) tool can be used to visualise this dataset and its links to DBpedia in a web browser. 
+
+A live demo of this tool (although only serving a subset of this dataset) is available [here](http://paolopareti.uk/howlinks/index.php).
+
 ## Statistics
 
 * **23,033,490**: number of triples.
