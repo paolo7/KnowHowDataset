@@ -1,4 +1,4 @@
-# The Web of Know-How: Human Activities and Instructions
+# The Web of Know-How: Human Instructions Dataset
 
 ## Overview
 
