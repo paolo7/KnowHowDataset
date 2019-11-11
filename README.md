@@ -2,10 +2,10 @@
 
 ## Overview
 
-* This dataset has been produced as part of the [The Web of Know-How](http://homepages.inf.ed.ac.uk/s1054760/prohow/index.htm) project
+* This dataset has been produced as part of the [The Web of Know-How](http://paolopareti.uk/homepage/prohow/index.htm) project
 * **To cite this dataset use:**
 Paolo Pareti, Benoit Testu, Ryutaro Ichise, Ewan Klein and Adam Barker. Integrating Know-How into the Linked Data Cloud. Knowledge Engineering and Knowledge Management, volume 8876 of Lecture Notes in Computer Science, pages 385-396. Springer International Publishing (2014) 
-([PDF](http://homepages.inf.ed.ac.uk/s1054760/papers/pareti_ekaw_2014.pdf)) ([bibtex](http://homepages.inf.ed.ac.uk/s1054760/bibtex/pareti2014b.bib))
+([PDF](https://arxiv.org/abs/1604.04506)) ([bibtex](https://dblp.uni-trier.de/rec/bibtex/journals/corr/ParetiTIKB16))
 * **Quickstart**: if you want to experiment with the most high-quality data before downloading all the datasets, download the file *9of11_knowhow_wikihow*, and optionally files *instruction set entities*, *Process - Inputs*, *Process - Outputs*, *Process - Step Links* and *wikiHow categories hierarchy*.
 * Data representation based on the [PROHOW](http://w3id.org/prohow#) vocabulary
 * Data extracted from existing web resources is linked to the original resources using the [Open Annotation](http://www.openannotation.org/spec/core/) specification
