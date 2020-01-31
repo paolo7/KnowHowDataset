@@ -1,5 +1,7 @@
 # The Web of Know-How: Human Instructions Dataset
 
+**NEWS: For a simpler dataset of instructions see the JSON files at this other [Kaggle repository](https://www.kaggle.com/paolop/human-instructions-dataset-updated-json-files)**
+
 ## Overview
 
 * This dataset has been produced as part of the [The Web of Know-How](http://paolopareti.uk/homepage/prohow/index.htm) project
